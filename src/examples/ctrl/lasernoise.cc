@@ -5,7 +5,7 @@
    CVS: $Id: rangernoise.cc,v 1.1 2008-03-04 02:09:56 rtv Exp $
 */
 
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 const double DEVIATION = 0.05;

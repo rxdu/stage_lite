@@ -7,7 +7,7 @@
 
 // uncomment the line 'ctrl "rasterize"' in <stage source>/worlds/simple.world to try this example
 
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 // Stage calls this when the model starts up

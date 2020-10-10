@@ -15,7 +15,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "stage.hh"
+#include "libstage/stage.hh"
 
 class Robot {
 public:

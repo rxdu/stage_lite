@@ -1,6 +1,6 @@
 #include <pthread.h>
 
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 // generic planner implementation

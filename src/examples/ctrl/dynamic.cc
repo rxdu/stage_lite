@@ -1,4 +1,4 @@
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 // Stage calls this when the model starts up

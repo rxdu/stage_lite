@@ -1,4 +1,4 @@
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 const double FLAGSZ = 0.25;

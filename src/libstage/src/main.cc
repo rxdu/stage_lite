@@ -27,7 +27,7 @@
 #include <getopt.h>
 
 #include "config.h"
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 const char *USAGE = "USAGE:  stage [options] <worldfile1> [worldfile2 ... worldfileN]\n"

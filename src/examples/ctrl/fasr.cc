@@ -1,4 +1,4 @@
-#include "stage.hh"
+#include "libstage/stage.hh"
 using namespace Stg;
 
 const bool verbose = false;

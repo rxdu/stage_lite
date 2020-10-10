@@ -11,7 +11,7 @@
 */
 
 #include "canvas.hh"
-#include "replace.h"
+// #include "replace.h"
 #include "stage.hh"
 #include "texture_manager.hh"
 #include "worldfile.hh"

@@ -40,7 +40,7 @@
 
 //#define DEBUG
 
-#include "replace.h" // for dirname(3)
+// #include "replace.h" // for dirname(3)
 #include "stage.hh"
 #include "worldfile.hh"
 using namespace Stg;

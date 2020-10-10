@@ -11,4 +11,4 @@ Version: @VERSION@
 Requires:
 
 Libs: -L${prefix}/@PROJECT_LIB_DIR@ -lstage @PC_LINK_FLAGS@
-Cflags: -I${prefix}/include/Stage-@APIVERSION@ @PC_INCLUDE_FLAGS@
+Cflags: -I${prefix}/include@ @PC_INCLUDE_FLAGS@

@@ -62,7 +62,7 @@ message( STATUS "Build type ${CMAKE_BUILD_TYPE}" )
 
 enable_testing()
 
-set(RGBFILE ${CMAKE_INSTALL_PREFIX}/share/stage/rgb.txt )
+set(RGBFILE ${CMAKE_INSTALL_PREFIX}/share/stage/rgb.txt)
 
 message(STATUS "Checking for libtool")
 find_path(LTDL_INCLUDE_DIR ltdl.h DOC "Libtool include dir")
@@ -104,7 +104,16 @@ endif(NOT OPENGL_GLU_FOUND)
 # message( STATUS "    OPENGL_INCLUDE_DIR = ${OPENGL_INCLUDE_DIR}")
 # message( STATUS "    OPENGL_glu_LIBRARY = ${OPENGL_glu_LIBRARY}")
 
-message(STATUS "Checking for optional libraries...")
+# message(STATUS "Checking for optional libraries...")
+
+# work through these subdirs
+add_subdirectory(src)
+add_subdirectory(assets)
+add_subdirectory(worlds) 
+
+################################# Installation #################################
+
+message( STATUS "Installation path CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}" )
 
 # Format the fltk libraries for inclusion in stage.pc
 set(PC_LIBRARIES ${FLTK_LIBRARIES} ${OPENGL_LIBRARIES})
@@ -122,18 +131,9 @@ foreach(INC ${PC_INCLUDE_DIRS})
   set(PC_INCLUDE_FLAGS "${PC_INCLUDE_FLAGS} -I${INC}")
 endforeach(INC ${PC_INCLUDE_DIRS})
 
-# work through these subdirs
-add_subdirectory(src)
-add_subdirectory(assets)
-add_subdirectory(worlds) 
-
-################################# Installation #################################
-
-message( STATUS "Installation path CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}" )
-
 # Create the pkgconfig file
-configure_file (${CMAKE_CURRENT_SOURCE_DIR}/cmake/stage.pc.in ${CMAKE_CURRENT_BINARY_DIR}/stage.pc @ONLY)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/stage.pc DESTINATION ${PROJECT_LIB_DIR}/pkgconfig/)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/stage.pc.in ${CMAKE_CURRENT_BINARY_DIR}/stage.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/stage.pc DESTINATION ${PROJECT_LIB_DIR}/pkgconfig/)
 
 # Create the CMake module files (needs to be run after the stage target was created)
 if (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} GREATER 2.8.11)
@@ -152,8 +152,8 @@ if (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} GREATER
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/stage-config.cmake
     INPUT ${CMAKE_CURRENT_BINARY_DIR}/stage-config.cmake)
 endif()
-configure_file (${CMAKE_CURRENT_SOURCE_DIR}/cmake/stage-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/stage-config-version.cmake @ONLY)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/stage-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/stage-config-version.cmake DESTINATION ${PROJECT_LIB_DIR}/cmake/${PROJECT_NAME})
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/stage-config-version.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/stage-config-version.cmake @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/stage-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/stage-config-version.cmake DESTINATION ${PROJECT_LIB_DIR}/cmake/${PROJECT_NAME})
 
 ################################## Packaging ###################################
 
