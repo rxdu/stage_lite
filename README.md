@@ -1,5 +1,16 @@
-# The Stage Simulator
-This is the Stage README file, containing an introduction, license and citation information. Stage is a 2(.5)D robotics standalone simulator and can also be used as a C++ library to build your own simulation environment. Up-to-date **documentation can be found [here](https://codedocs.xyz/CodeFinder2/Stage/)**.
+# The Stage-lite Simulator
+
+[![Build Status](https://travis-ci.org/CodeFinder2/Stage.svg?branch=master)](https://travis-ci.org/CodeFinder2/Stage)
+
+Stage is a 2(.5)D robotics standalone simulator and can also be used as a C++ library to build your own simulation environment. **Documentation can be found [here](https://codedocs.xyz/CodeFinder2/Stage/)**.
+
+Stage-lite is a fork of the original Stage simulator with the following major differences:
+
+* Removed support for player, which hasn't been updated for a long time
+* Modernized CMake configurations and the project organization
+* More code and feature updates in progress 
+
+This is the Stage README file, containing an introduction, license and citation information. 
 
 For release notes see RELEASE.txt
 For installation notes see INSTALL.txt
@@ -7,9 +18,8 @@ For installation notes see INSTALL.txt
 Copyright Richard Vaughan and contributors 1998-2011
 Part of the Player Project (http://playerstage.org)
 
-[![Build Status](https://travis-ci.org/CodeFinder2/Stage.svg?branch=master)](https://travis-ci.org/CodeFinder2/Stage)
-
 # License
+
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2 as
 published by the Free Software Foundation.
@@ -25,6 +35,7 @@ terms of the license.
 
 
 # Introduction
+
 Stage is a robot simulator. It provides a virtual world populated by
 mobile robots and sensors, along with various objects for the robots
 to sense and manipulate.
@@ -41,13 +52,14 @@ own programs.
 
 
 # Models
+
 Stage provides several sensor and actuator models, including sonar
 or infrared rangers, scanning laser rangefinder, color-blob tracking,
 fiducial tracking, bumpers, grippers and mobile robot bases with
 odometric or global localization.
 
-
 # Design
+
 Stage was designed with multi-agent systems in mind, so it provides
 fairly simple, computationally cheap models of lots of devices rather
 than attempting to emulate any device with great fidelity. This design
@@ -67,6 +79,7 @@ with Stage.
 
 
 # Citations
+
 If you use Stage in your work, we'd appreciate a citation. At the time of writing, the most suitable reference is either:
 - Richard Vaughan. "Massively Multiple Robot Simulations in Stage", Swarm Intelligence 2(2-4):189-208, 2008. Springer, [download PDF](http://autonomylab.org/doc/vaughan_si08.pdf)
 
@@ -83,6 +96,7 @@ used to create your own custom simulator, it's called "libstage" or
 simulation backend, Gazebo, it's called Player/Gazebo. Gazebo without Player is just "Gazebo". All this software is part of the "Player Project".
 
 # Support
+
 Funding for Stage has been provided in part by:
 
 - DARPA (USA)
@@ -92,8 +106,8 @@ Funding for Stage has been provided in part by:
 - NSF (USA)
 - Simon Fraser University (Canada)
 
-Names
------
+# Names
+
 The names "Player" and "Stage" were inspired by the lines:
 
   > All the world's a stage,  
@@ -102,8 +116,8 @@ The names "Player" and "Stage" were inspired by the lines:
 from "As You Like It" by William Shakespeare.
 
 
-References
-----------
+# References
+
 [4] Nick Jakobi (1997) "Evolutionary Robotics and the Radical Envelope
 of Noise Hypothesis", Adaptive Behavior Volume 6, Issue 2. pp.325 -
 368.
