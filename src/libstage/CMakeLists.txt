@@ -3,6 +3,11 @@ message( STATUS "Configuring libstage" )
 # for config.h
 include_directories(${PROJECT_BINARY_DIR})
 
+# Create the config.h file
+# config.h belongs with the source (and not in CMAKE_CURRENT_BINARY_DIR as in Brian's original version)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in 
+					${CMAKE_CURRENT_SOURCE_DIR}/config.h @ONLY)
+
 set( stageSrcs    
 	block.cc
 	blockgroup.cc
