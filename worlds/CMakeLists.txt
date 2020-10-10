@@ -1,21 +1,21 @@
-ADD_SUBDIRECTORY(benchmark)
+add_subdirectory(benchmark)
 
-FILE( GLOB cfgs "*.cfg" )
-FILE( GLOB worlds "*.world" )
-FILE( GLOB incs "*.inc" )
-FILE( GLOB scripts "*.sh" )
+file( GLOB cfgs "*.cfg" )
+file( GLOB worlds "*.world" )
+file( GLOB incs "*.inc" )
+file( GLOB scripts "*.sh" )
 
-INSTALL(FILES ${cfgs} ${worlds} ${incs} ${scripts}
+install(FILES ${cfgs} ${worlds} ${incs} ${scripts}
 DESTINATION share/stage/worlds)
 
-#INSTALL (DIRECTORY bitmaps wifi DESTINATION share/stage/worlds)
+#install (DIRECTORY bitmaps wifi DESTINATION share/stage/worlds)
 
-ADD_SUBDIRECTORY(bitmaps)
-ADD_SUBDIRECTORY(wifi)
+add_subdirectory(bitmaps)
+add_subdirectory(wifi)
 
-#FILE(GLOB worlds "*.world")
-#FILE(GLOB incs "*.inc")
-#INSTALL(FILES ${worlds} ${incs}
+#file(GLOB worlds "*.world")
+#file(GLOB incs "*.inc")
+#install(FILES ${worlds} ${incs}
 #        DESTINATION share/stage/worlds
 #)
 

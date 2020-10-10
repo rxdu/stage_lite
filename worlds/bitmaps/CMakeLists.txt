@@ -1,5 +1,5 @@
-FILE(GLOB pngs "*.png")
-INSTALL(FILES ${pngs}
+file(GLOB pngs "*.png")
+install(FILES ${pngs}
         DESTINATION share/stage/worlds/bitmaps
 )
 

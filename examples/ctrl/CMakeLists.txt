@@ -1,5 +1,5 @@
 
-SET( PLUGINS
+set( PLUGINS
   fasr
   sink
   source
@@ -19,7 +19,7 @@ endforeach( PLUGIN )
 ADD_LIBRARY( fasr2 MODULE fasr2.cc astar/findpath.cpp )
 
 # add extras to the list of plugins
-SET( PLUGINS ${PLUGINS} fasr2 )
+set( PLUGINS ${PLUGINS} fasr2 )
 
 set_source_files_properties( ${PLUGINS} PROPERTIES 
   COMPILE_FLAGS "${FLTK_CFLAGS}" 

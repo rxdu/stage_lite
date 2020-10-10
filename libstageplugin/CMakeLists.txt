@@ -1,4 +1,4 @@
-MESSAGE( STATUS "Configuring libstageplugin" )
+message( STATUS "Configuring libstageplugin" )
 
 link_directories( ${PLAYER_LIBRARY_DIRS} )
 include_directories( ${PLAYER_INCLUDE_DIRS} )
@@ -36,11 +36,11 @@ SET_TARGET_PROPERTIES( stageplugin PROPERTIES
                        LINK_FLAGS "${FLTK_LDFLAGS}"
  )
 
-IF (BUILD_LSPTEST)
-	ADD_SUBDIRECTORY(test)
-ENDIF (BUILD_LSPTEST)
+if (BUILD_LSPTEST)
+	add_subdirectory(test)
+endif (BUILD_LSPTEST)
 
-INSTALL(TARGETS stageplugin
+install(TARGETS stageplugin
 	LIBRARY DESTINATION ${PROJECT_LIB_DIR}
 )
 

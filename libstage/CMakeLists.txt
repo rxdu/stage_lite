@@ -1,4 +1,4 @@
-MESSAGE( STATUS "Configuring libstage" )
+message( STATUS "Configuring libstage" )
 
 # for config.h
 include_directories(${PROJECT_BINARY_DIR})
@@ -51,9 +51,9 @@ add_library(stage SHARED ${stageSrcs})
 
 # if fltk-config didn't bring along the OpenGL dependencies (eg. on
 # Debian/Ubuntu), add them explicity 
-IF (NOT(${FLTK_LDFLAGS} MATCHES "-lGL"))
+if (NOT(${FLTK_LDFLAGS} MATCHES "-lGL"))
   target_link_libraries( stage ${OPENGL_LIBRARIES}) 
-ENDIF (NOT(${FLTK_LDFLAGS} MATCHES "-lGL"))
+endif (NOT(${FLTK_LDFLAGS} MATCHES "-lGL"))
 
 
 # causes the shared library to have a version number
@@ -93,15 +93,15 @@ set_target_properties( stagebinary PROPERTIES OUTPUT_NAME stage )
 
 target_link_libraries( stagebinary stage )
 
-IF(PROJECT_OS_LINUX)
+if(PROJECT_OS_LINUX)
   target_link_libraries( stagebinary stage pthread )
-ENDIF(PROJECT_OS_LINUX)
+endif(PROJECT_OS_LINUX)
 
-INSTALL(TARGETS stagebinary stage
+install(TARGETS stagebinary stage
 	RUNTIME DESTINATION bin
 	LIBRARY DESTINATION ${PROJECT_LIB_DIR}
 )
 
-INSTALL(FILES stage.hh 
+install(FILES stage.hh 
         DESTINATION include/${PROJECT_NAME}-${APIVERSION})
 

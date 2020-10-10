@@ -1,11 +1,11 @@
 
-FILE( GLOB pngs "*.png" )
+file( GLOB pngs "*.png" )
 
-INSTALL(FILES ${pngs} rgb.txt 
+install(FILES ${pngs} rgb.txt 
         DESTINATION share/stage/assets
 )
 
-INSTALL(FILES rgb.txt 
+install(FILES rgb.txt 
         DESTINATION share/stage
 )
 
